@@ -21,9 +21,10 @@ In a project with a theme already installed (`/theme set <name>`):
 | Category | Components | What's in it |
 | --- | --- | --- |
 | `navbar` | 5 | Top navs (simple, with auth, with search), vertical sidebar, mobile menu drawer |
+| `hero`   | 5 | Simple, minimal, split (with visual), with-form (email signup), with-stats |
 
-More categories ship as v0.3 expands: **hero**, **forms**, **data**,
-**feedback**, **marketing**, **layout**.
+More categories ship as v0.3 expands: **forms**, **data**, **feedback**,
+**marketing**, **layout**.
 
 ## Authoring conventions
 

@@ -18,6 +18,10 @@ export interface HSLPair {
 export interface ColorPalette {
   background: HSLPair;
   foreground: HSLPair;
+  card: HSLPair;
+  cardForeground: HSLPair;
+  popover: HSLPair;
+  popoverForeground: HSLPair;
   primary: HSLPair;
   primaryForeground: HSLPair;
   secondary: HSLPair;

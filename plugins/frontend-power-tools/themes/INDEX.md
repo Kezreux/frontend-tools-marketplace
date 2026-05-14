@@ -126,11 +126,13 @@ Every theme file (`themes/<name>/theme.ts`) exports a single `Theme` object
 matching the interface in `themes/_theme.ts`. The full list of constrained
 fields:
 
-- **`colors`** — 15 semantic tokens (background, foreground, primary,
-  primary-foreground, secondary, secondary-foreground, muted,
-  muted-foreground, accent, accent-foreground, border, input, ring,
-  destructive, destructive-foreground), each with `light` and `dark` HSL
-  triplets.
+- **`colors`** — 19 semantic tokens (background, foreground, card,
+  card-foreground, popover, popover-foreground, primary, primary-foreground,
+  secondary, secondary-foreground, muted, muted-foreground, accent,
+  accent-foreground, border, input, ring, destructive, destructive-foreground),
+  each with `light` and `dark` HSL triplets. The 19 match what shadcn/ui
+  components expect; `card` is used by navbars, sidebars, and cards;
+  `popover` is used by dropdowns and menus.
 - **`typography`** — sans/serif/mono font stacks, a 9-step type scale
   (xs → 5xl) with explicit size + lineHeight in px, and the 4 standard
   weights.

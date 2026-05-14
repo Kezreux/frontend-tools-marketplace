@@ -36,7 +36,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/themes/<name>/theme.ts`. The file is a plain
 object literal — no execution needed. Extract:
 
 - `name`, `description`
-- 15 color tokens (light/dark HSL triplets)
+- 19 color tokens (light/dark HSL triplets): background, foreground, card, cardForeground, popover, popoverForeground, primary, primaryForeground, secondary, secondaryForeground, muted, mutedForeground, accent, accentForeground, border, input, ring, destructive, destructiveForeground
 - `typography.fontFamily.{sans,serif,mono}` font stacks
 - `typography.scale` (9 steps with size + lineHeight)
 - `typography.weights`
@@ -162,6 +162,14 @@ theme: {
     colors: {
       background: "hsl(var(--background))",
       foreground: "hsl(var(--foreground))",
+      card: {
+        DEFAULT: "hsl(var(--card))",
+        foreground: "hsl(var(--card-foreground))",
+      },
+      popover: {
+        DEFAULT: "hsl(var(--popover))",
+        foreground: "hsl(var(--popover-foreground))",
+      },
       primary: {
         DEFAULT: "hsl(var(--primary))",
         foreground: "hsl(var(--primary-foreground))",
@@ -217,13 +225,17 @@ CommonJS; `export default {...}` stays ESM.
 #### 6d. Update main CSS
 
 Locate (or insert) the `:root { ... }` and dark-selector blocks. Write
-the 15 color CSS vars in each, plus a `--radius` helper. Preserve other
+all 19 color CSS vars in each, plus a `--radius` helper. Preserve other
 CSS unchanged.
 
 ```css
 :root {
   --background: <light bg HSL triplet>;
   --foreground: <light fg HSL triplet>;
+  --card: <light card HSL>;
+  --card-foreground: <light card-fg HSL>;
+  --popover: <light popover HSL>;
+  --popover-foreground: <light popover-fg HSL>;
   --primary: <light primary HSL>;
   --primary-foreground: <light primary-fg HSL>;
   --secondary: <light secondary HSL>;

@@ -7,6 +7,10 @@ export const theme: Theme = {
   colors: {
     background:            { light: "30 30% 98%",     dark: "260 15% 11%" },
     foreground:            { light: "260 15% 20%",    dark: "30 20% 94%" },
+    card:                  { light: "30 30% 98%",     dark: "260 15% 11%" },
+    cardForeground:        { light: "260 15% 20%",    dark: "30 20% 94%" },
+    popover:               { light: "30 30% 98%",     dark: "260 15% 11%" },
+    popoverForeground:     { light: "260 15% 20%",    dark: "30 20% 94%" },
     primary:               { light: "260 60% 50%",    dark: "260 55% 70%" },
     primaryForeground:     { light: "30 30% 98%",     dark: "260 15% 11%" },
     secondary:             { light: "280 35% 94%",    dark: "260 12% 18%" },

@@ -1,0 +1,54 @@
+name: Build catalog + notify website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "plugins/frontend-power-tools/components/**/*.tsx"
+      - "plugins/frontend-power-tools/scripts/build-catalog.mjs"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Regenerate catalog.json
+        run: node plugins/frontend-power-tools/scripts/build-catalog.mjs
+
+      - name: Commit catalog.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet plugins/frontend-power-tools/components/catalog.json; then
+            echo "catalog.json unchanged — skipping commit."
+          else
+            git add plugins/frontend-power-tools/components/catalog.json
+            git commit -m "ci: regenerate catalog.json [skip ci]"
+            git push
+          fi
+
+      - name: Notify website to redeploy
+        env:
+          WEBSITE_DEPLOY_HOOK: ${{ secrets.WEBSITE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$WEBSITE_DEPLOY_HOOK" ]; then
+            echo "WEBSITE_DEPLOY_HOOK secret not set — skipping notify."
+            exit 0
+          fi
+          if curl -fsSL -X POST "$WEBSITE_DEPLOY_HOOK" -o /dev/null; then
+            echo "✓ Notified website to redeploy."
+          else
+            echo "✗ Failed to notify website. Exit code: $?"
+            exit 1
+          fi

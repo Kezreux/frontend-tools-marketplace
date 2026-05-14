@@ -16,7 +16,7 @@
  * Missing either fails the build with a clear error and a non-zero exit.
  *
  * Env vars:
- *   CATALOG_REPO    — "owner/repo" for the sourceUrl. Default Kezreux/frontend-tools-marketplace.
+ *   CATALOG_REPO    — "owner/repo" for the sourceUrl. Default Kezreux/kezreux-frontend.
  *   CATALOG_BRANCH  — branch name. Default main.
  */
 
@@ -29,10 +29,10 @@ const PLUGIN_ROOT  = resolve(__dirname, "..");
 const COMPONENTS   = resolve(PLUGIN_ROOT, "components");
 const REPO_ROOT    = resolve(PLUGIN_ROOT, "..", "..");
 
-const [repoOwner = "Kezreux", repoName = "frontend-tools-marketplace"] =
+const [repoOwner = "Kezreux", repoName = "kezreux-frontend"] =
   (process.env.CATALOG_REPO || "").split("/").filter(Boolean).length === 2
     ? process.env.CATALOG_REPO.split("/")
-    : ["Kezreux", "frontend-tools-marketplace"];
+    : ["Kezreux", "kezreux-frontend"];
 const BRANCH = process.env.CATALOG_BRANCH || "main";
 
 const CATEGORY_LABELS = {

@@ -50,7 +50,7 @@ provider's settings → deploy hook / build hook → create → copy URL.
 
 ### 2. Store the hook URL as a repo secret
 
-In the plugin repo (`Kezreux/frontend-tools-marketplace`):
+In the plugin repo (`Kezreux/kezreux-frontend`):
 
 1. Settings → Secrets and variables → Actions.
 2. **New repository secret**:
@@ -72,7 +72,7 @@ hook triggers that build.
 ```ts
 // app/lib/catalog.ts
 const CATALOG_URL =
-  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/catalog.json";
+  "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/catalog.json";
 
 export interface CatalogComponent {
   name: string;
@@ -136,7 +136,7 @@ export default async function ComponentsPage() {
 ```astro
 ---
 const catalog = await fetch(
-  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/catalog.json"
+  "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/catalog.json"
 ).then((r) => r.json());
 ---
 {catalog.components.map((c) => <p>{c.name} — {c.description}</p>)}
@@ -161,7 +161,7 @@ Two ways to give the website access:
 
 ```bash
 # In the website repo
-git submodule add https://github.com/Kezreux/frontend-tools-marketplace plugin
+git submodule add https://github.com/Kezreux/kezreux-frontend plugin
 git config -f .gitmodules submodule.plugin.branch main
 ```
 
@@ -236,7 +236,7 @@ moves around as needed.
 After completing the setup above, push any change touching a component
 file. Within 1–2 minutes:
 
-1. Open `https://github.com/Kezreux/frontend-tools-marketplace/actions` —
+1. Open `https://github.com/Kezreux/kezreux-frontend/actions` —
    the workflow should be running or just completed.
 2. Check the Action log for the `Notify website to redeploy` step — it
    should say `✓ Notified website to redeploy.`

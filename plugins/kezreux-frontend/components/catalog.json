@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-05-14T19:01:48.000Z",
+  "generatedAt": "2026-05-14T19:12:54.000Z",
   "categories": [
     {
       "id": "form",
@@ -57,7 +57,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/auth/LoginForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/LoginForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/auth/LoginForm.tsx",
       "lines": 165,
       "demos": [
         "default"
@@ -79,7 +79,7 @@
       ],
       "complexity": "simple",
       "filePath": "plugins/kezreux-frontend/components/form/auth/PasswordResetForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/PasswordResetForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/auth/PasswordResetForm.tsx",
       "lines": 130,
       "demos": [
         "default"
@@ -102,7 +102,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/auth/SignupForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/SignupForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/auth/SignupForm.tsx",
       "lines": 223,
       "demos": [
         "default"
@@ -125,7 +125,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/auth/TwoFactorForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/TwoFactorForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/auth/TwoFactorForm.tsx",
       "lines": 151,
       "demos": [
         "default"
@@ -147,7 +147,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/feedback/ContactForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/feedback/ContactForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/feedback/ContactForm.tsx",
       "lines": 188,
       "demos": [
         "default"
@@ -170,7 +170,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/feedback/FeedbackSurvey.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/feedback/FeedbackSurvey.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/feedback/FeedbackSurvey.tsx",
       "lines": 159,
       "demos": [
         "default"
@@ -192,7 +192,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/search/FilterPanel.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/search/FilterPanel.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/search/FilterPanel.tsx",
       "lines": 157,
       "demos": [
         "default"
@@ -213,7 +213,7 @@
       ],
       "complexity": "simple",
       "filePath": "plugins/kezreux-frontend/components/form/search/SearchBox.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/search/SearchBox.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/search/SearchBox.tsx",
       "lines": 115,
       "demos": [
         "empty",
@@ -236,7 +236,7 @@
       ],
       "complexity": "complex",
       "filePath": "plugins/kezreux-frontend/components/form/settings/AccountSettings.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/settings/AccountSettings.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/settings/AccountSettings.tsx",
       "lines": 245,
       "demos": [
         "default"
@@ -258,7 +258,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/form/settings/ProfileForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/settings/ProfileForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/form/settings/ProfileForm.tsx",
       "lines": 202,
       "demos": [
         "default"
@@ -279,7 +279,7 @@
       ],
       "complexity": "simple",
       "filePath": "plugins/kezreux-frontend/components/hero/HeroMinimal.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroMinimal.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroMinimal.tsx",
       "lines": 46,
       "demos": [
         "default"
@@ -300,7 +300,7 @@
       ],
       "complexity": "simple",
       "filePath": "plugins/kezreux-frontend/components/hero/HeroSimple.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroSimple.tsx",
       "lines": 74,
       "demos": [
         "default"
@@ -322,7 +322,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/hero/HeroSplit.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroSplit.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroSplit.tsx",
       "lines": 97,
       "demos": [
         "default"
@@ -344,7 +344,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/hero/HeroWithForm.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroWithForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroWithForm.tsx",
       "lines": 130,
       "demos": [
         "default"
@@ -366,7 +366,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
       "lines": 99,
       "demos": [
         "default"
@@ -388,7 +388,7 @@
       ],
       "complexity": "complex",
       "filePath": "plugins/kezreux-frontend/components/navbar/MobileMenuDrawer.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/MobileMenuDrawer.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/navbar/MobileMenuDrawer.tsx",
       "lines": 180,
       "demos": [
         "default"
@@ -410,7 +410,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/navbar/SidebarVertical.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/SidebarVertical.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/navbar/SidebarVertical.tsx",
       "lines": 127,
       "demos": [
         "default"
@@ -431,7 +431,7 @@
       ],
       "complexity": "simple",
       "filePath": "plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
       "lines": 74,
       "demos": [
         "default"
@@ -454,7 +454,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/navbar/TopNavWithAuth.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavWithAuth.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/navbar/TopNavWithAuth.tsx",
       "lines": 180,
       "demos": [
         "signed in",
@@ -477,7 +477,7 @@
       ],
       "complexity": "medium",
       "filePath": "plugins/kezreux-frontend/components/navbar/TopNavWithSearch.tsx",
-      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavWithSearch.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/navbar/TopNavWithSearch.tsx",
       "lines": 138,
       "demos": [
         "default"

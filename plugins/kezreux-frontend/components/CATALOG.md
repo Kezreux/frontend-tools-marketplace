@@ -116,7 +116,7 @@ The script writes a flat array of:
   "keywords": ["navbar", "top nav", "header"],
   "complexity": "simple",
   "filePath": "plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
-  "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/...",
+  "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/...",
   "lines": 61,
   "demos": ["default"]
 }
@@ -130,7 +130,7 @@ component module directly).
 ## 6. Environment variables
 
 The generator's `sourceUrl` field defaults to
-`Kezreux/frontend-tools-marketplace` on `main`. To override (for a fork or
+`Kezreux/kezreux-frontend` on `main`. To override (for a fork or
 a different branch):
 
 ```bash

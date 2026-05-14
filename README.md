@@ -36,7 +36,7 @@ fallback when `CLAUDE.md` is silent.
 In any project on any machine where Claude Code is configured:
 
 ```text
-/plugin marketplace add Kezreux/frontend-tools-marketplace
+/plugin marketplace add Kezreux/kezreux-frontend
 /plugin install kezreux-frontend@frontend-tools-marketplace
 /reload-plugins
 ```

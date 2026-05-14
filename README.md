@@ -3,6 +3,12 @@
 A Claude Code plugin marketplace that ships **`frontend-power-tools`** — skills,
 subagents, slash commands, and hooks for frontend design and development work.
 
+> **v0.2.0-beta.1** adds a **theme system** (7 preset themes with full install
+> via `/theme set <name>`) and a **canonical rules engine** that every audit
+> skill enforces. The auto-loop orchestrator (`/build "intent"`) lands in
+> v0.2.0 final. Install with `/plugin marketplace update`; see
+> *What's new* below the install instructions.
+
 ## What it does
 
 - **Audits your UI changes** against the project's design system (tokens,
@@ -39,10 +45,29 @@ subagents, and hooks into your session.
 Verify with `/tokens` — it should print your project's design tokens (or the
 Tailwind + shadcn fallback if no `CLAUDE.md` is present).
 
+## What's new in v0.2.0-beta.1
+
+- **Theme system** — 7 preset themes (Minimal, Editorial, Brutalist, Soft,
+  Playful, Rustic, Industrial), each defined as a strict machine-readable
+  spec covering colors, typography, spacing, radius, shadows, density,
+  animation, and iconography. See `plugins/frontend-power-tools/themes/INDEX.md`
+  for the catalog. Install one with `/theme set <name>` — the install detects
+  your framework, backs up modified files, writes `src/styles/theme.ts` +
+  CLAUDE.md section + tailwind config merge + CSS vars, and verifies. Revert
+  any time with `/theme rollback`.
+- **Canonical rules engine** — `plugins/frontend-power-tools/rules/RULES.md`
+  is now the source of truth for 14 sections of opinionated rules (React+TS,
+  composition, state, a11y, responsive, tokens, file structure, naming,
+  imports, error handling, forms, performance, theming, comments). Every
+  audit skill loads it on invocation. Your project's `CLAUDE.md` is the
+  deviation layer — overrides always win.
+- **Auto-loop orchestrator (`/build "intent"`)** — coming in v0.2.0 final.
+
 ## Commands
 
 | Command | What it does |
 | --- | --- |
+| `/theme [list \| <name> \| set <name> \| preview [n] \| rollback]` | Manage the active theme. `/theme` alone lists; `/theme <name>` installs the named theme with backup-restore safety; `/theme preview <name>` shows sample component code; `/theme rollback` restores `.pre-theme.bak` files. |
 | `/design-review` | Audits the current `git diff` against your design system. Read-only; reports findings as Blockers / Majors / Minors with `file:line` citations. Runs in the `design-reviewer` subagent so it gets its own context window. |
 | `/a11y [path]` | WCAG 2.1 AA accessibility audit. Defaults to the current diff; pass a path or glob to scope. Defers to `axe-core` if your project has it; otherwise does a structured manual pass. |
 | `/component-new <Name> [target-dir]` | Scaffolds a new component. Detects existing file casing, test framework, Storybook presence, and re-export patterns — generates files that match. Falls back to React + Tailwind + shadcn/ui with `forwardRef` when no conventions are detected. |

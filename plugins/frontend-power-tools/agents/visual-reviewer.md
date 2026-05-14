@@ -13,7 +13,7 @@ tools:
   - mcp__playwright__browser_wait_for
   - mcp__playwright__browser_resize
   - mcp__playwright__browser_close
-model: sonnet
+model: opus
 ---
 
 # Visual reviewer

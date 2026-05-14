@@ -1,7 +1,12 @@
 {
   "version": "1",
-  "generatedAt": "2026-05-14T16:27:17.000Z",
+  "generatedAt": "2026-05-14T16:53:19.000Z",
   "categories": [
+    {
+      "id": "form",
+      "label": "Forms",
+      "count": 5
+    },
     {
       "id": "hero",
       "label": "Hero sections",
@@ -14,6 +19,112 @@
     }
   ],
   "components": [
+    {
+      "name": "ContactForm",
+      "category": "form",
+      "description": "Name + email + message (optional subject) with inline validation, pending state, and success confirmation.",
+      "keywords": [
+        "form",
+        "contact",
+        "message",
+        "support",
+        "inquiry",
+        "email",
+        "name"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/form/ContactForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/form/ContactForm.tsx",
+      "lines": 188,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "LoginForm",
+      "category": "form",
+      "description": "Email + password sign-in with inline validation, remember-me, forgot-password and sign-up links. Pending state on submit.",
+      "keywords": [
+        "form",
+        "login",
+        "signin",
+        "auth",
+        "password",
+        "email",
+        "remember"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/form/LoginForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/form/LoginForm.tsx",
+      "lines": 165,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "PasswordResetForm",
+      "category": "form",
+      "description": "Single-email password reset request with inline validation, pending state, and a success message.",
+      "keywords": [
+        "form",
+        "password",
+        "reset",
+        "forgot",
+        "recovery",
+        "auth",
+        "email"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/frontend-power-tools/components/form/PasswordResetForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/form/PasswordResetForm.tsx",
+      "lines": 130,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "ProfileForm",
+      "category": "form",
+      "description": "Pre-filled profile editor — name, email, bio (textarea), optional avatar URL. Dirty-state tracking, Save / Cancel actions, pending state.",
+      "keywords": [
+        "form",
+        "profile",
+        "settings",
+        "account",
+        "user",
+        "update",
+        "edit"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/form/ProfileForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/form/ProfileForm.tsx",
+      "lines": 202,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SignupForm",
+      "category": "form",
+      "description": "Email + password + confirm + terms-acceptance with strength check, inline errors, and pending state.",
+      "keywords": [
+        "form",
+        "signup",
+        "register",
+        "account",
+        "auth",
+        "password",
+        "email",
+        "terms"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/form/SignupForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/form/SignupForm.tsx",
+      "lines": 223,
+      "demos": [
+        "default"
+      ]
+    },
     {
       "name": "HeroMinimal",
       "category": "hero",

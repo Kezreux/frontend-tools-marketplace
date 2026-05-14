@@ -22,8 +22,9 @@ In a project with a theme already installed (`/theme set <name>`):
 | --- | --- | --- |
 | `navbar` | 5 | Top navs (simple, with auth, with search), vertical sidebar, mobile menu drawer |
 | `hero`   | 5 | Simple, minimal, split (with visual), with-form (email signup), with-stats |
+| `form`   | 5 | Login, signup, password reset, contact, profile editor — all with submit-time validation + pending state |
 
-More categories ship as v0.3 expands: **forms**, **data**, **feedback**,
+More categories ship as v0.3 expands: **data**, **feedback**,
 **marketing**, **layout**.
 
 ## Authoring a new component

@@ -1,0 +1,8 @@
+{
+  "name": "kezreux-frontend",
+  "description": "Skills, subagents, slash commands, and hooks that optimize Claude Code for frontend design and development. Adapts to each host project's CLAUDE.md for stack-specific conventions.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Kezreux"
+  }
+}

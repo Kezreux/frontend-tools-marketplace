@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "frontend-power-tools",
-      "source": "./plugins/frontend-power-tools",
+      "name": "kezreux-frontend",
+      "source": "./plugins/kezreux-frontend",
       "description": "Skills, subagents, slash commands, and hooks that optimize Claude Code for frontend design — design reviews, a11y audits, component scaffolding, visual checks, token linting, plus formatting/typecheck hooks."
     }
   ]

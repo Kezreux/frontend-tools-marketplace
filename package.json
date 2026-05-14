@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:catalog": "node plugins/frontend-power-tools/scripts/build-catalog.mjs"
+    "build:catalog": "node plugins/kezreux-frontend/scripts/build-catalog.mjs"
   }
 }

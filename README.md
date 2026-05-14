@@ -1,6 +1,6 @@
 # frontend-tools-marketplace
 
-A Claude Code plugin marketplace that ships **`frontend-power-tools`** — skills,
+A Claude Code plugin marketplace that ships **`kezreux-frontend`** — skills,
 subagents, slash commands, and hooks for frontend design and development work.
 
 ## What it does
@@ -37,7 +37,7 @@ In any project on any machine where Claude Code is configured:
 
 ```text
 /plugin marketplace add Kezreux/frontend-tools-marketplace
-/plugin install frontend-power-tools@frontend-tools-marketplace
+/plugin install kezreux-frontend@frontend-tools-marketplace
 /reload-plugins
 ```
 
@@ -61,10 +61,10 @@ Tailwind + shadcn fallback if no `CLAUDE.md` is present).
   the full shadcn/ui surface — including `card` and `popover` for
   navbars, sidebars, dropdowns). Every foreground/background pair passes
   WCAG AA body (4.5:1+) in both light and dark modes, audited across 140
-  contrast pairs. See `plugins/frontend-power-tools/themes/INDEX.md` for
+  contrast pairs. See `plugins/kezreux-frontend/themes/INDEX.md` for
   the catalog. `/theme set` does a full install with dry-run-confirm,
   `.pre-theme.bak` backups, verify-or-restore.
-- **Canonical rules engine.** `plugins/frontend-power-tools/rules/RULES.md`
+- **Canonical rules engine.** `plugins/kezreux-frontend/rules/RULES.md`
   is now the source of truth for 14 sections of opinionated rules
   (React+TS, composition, state, a11y, responsive, tokens, file
   structure, naming, imports, error handling, forms, performance,
@@ -245,7 +245,7 @@ this directory:
 
 ```text
 /plugin marketplace add /absolute/path/to/frontend-tools-marketplace
-/plugin install frontend-power-tools@frontend-tools-marketplace
+/plugin install kezreux-frontend@frontend-tools-marketplace
 /reload-plugins
 ```
 
@@ -259,7 +259,7 @@ After editing a skill, subagent, command, or hook:
 To uninstall cleanly:
 
 ```text
-/plugin uninstall frontend-power-tools@frontend-tools-marketplace
+/plugin uninstall kezreux-frontend@frontend-tools-marketplace
 /plugin marketplace remove frontend-tools-marketplace
 ```
 
@@ -269,7 +269,7 @@ To uninstall cleanly:
 .claude-plugin/
   marketplace.json           # marketplace manifest
 plugins/
-  frontend-power-tools/
+  kezreux-frontend/
     .claude-plugin/
       plugin.json            # plugin manifest
     skills/<name>/SKILL.md   # one dir per skill
@@ -282,7 +282,7 @@ plugins/
 
 ### Releasing
 
-1. Bump `plugins/frontend-power-tools/.claude-plugin/plugin.json` `version`.
+1. Bump `plugins/kezreux-frontend/.claude-plugin/plugin.json` `version`.
 2. Bump `.claude-plugin/marketplace.json` `metadata.version`.
 3. Commit, tag, push. Consumers pick up the change with
    `/plugin marketplace update`.

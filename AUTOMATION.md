@@ -4,7 +4,7 @@ This repo includes a GitHub Action (`.github/workflows/build-catalog.yml`)
 that runs on every push to `main` that touches a component or the
 generator script. It does three things:
 
-1. Regenerates `plugins/frontend-power-tools/components/catalog.json`.
+1. Regenerates `plugins/kezreux-frontend/components/catalog.json`.
 2. Commits the regenerated catalog if it changed (skipping if unchanged).
 3. POSTs to your website's deploy hook so the wiki rebuilds.
 
@@ -72,7 +72,7 @@ hook triggers that build.
 ```ts
 // app/lib/catalog.ts
 const CATALOG_URL =
-  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/catalog.json";
+  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/catalog.json";
 
 export interface CatalogComponent {
   name: string;
@@ -136,7 +136,7 @@ export default async function ComponentsPage() {
 ```astro
 ---
 const catalog = await fetch(
-  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/catalog.json"
+  "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/catalog.json"
 ).then((r) => r.json());
 ---
 {catalog.components.map((c) => <p>{c.name} — {c.description}</p>)}
@@ -168,7 +168,7 @@ git config -f .gitmodules submodule.plugin.branch main
 Then import from the submodule path:
 
 ```tsx
-import { TopNavWithAuth, demos as authDemos } from "../plugin/plugins/frontend-power-tools/components/navbar/TopNavWithAuth";
+import { TopNavWithAuth, demos as authDemos } from "../plugin/plugins/kezreux-frontend/components/navbar/TopNavWithAuth";
 
 {Object.entries(authDemos).map(([label, props]) => (
   <figure key={label}>
@@ -184,7 +184,7 @@ support this with a flag in the checkout step).
 
 **Bundled copy** (alternative):
 
-Copy the `plugins/frontend-power-tools/components/` directory into your
+Copy the `plugins/kezreux-frontend/components/` directory into your
 website repo as a build step. Pros: tighter dependency on a known
 revision. Cons: needs a manual sync mechanism.
 

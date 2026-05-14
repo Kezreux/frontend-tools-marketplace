@@ -1,0 +1,487 @@
+{
+  "version": "1",
+  "generatedAt": "2026-05-14T19:01:48.000Z",
+  "categories": [
+    {
+      "id": "form",
+      "label": "Forms",
+      "count": 10,
+      "subcategories": [
+        {
+          "id": "auth",
+          "label": "Authentication",
+          "count": 4
+        },
+        {
+          "id": "feedback",
+          "label": "Feedback",
+          "count": 2
+        },
+        {
+          "id": "search",
+          "label": "Search & filter",
+          "count": 2
+        },
+        {
+          "id": "settings",
+          "label": "Settings",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "label": "Hero sections",
+      "count": 5
+    },
+    {
+      "id": "navbar",
+      "label": "Navigation",
+      "count": 5
+    }
+  ],
+  "components": [
+    {
+      "name": "LoginForm",
+      "category": "form",
+      "subcategory": "auth",
+      "description": "Email + password sign-in with inline validation, remember-me, forgot-password and sign-up links. Pending state on submit.",
+      "keywords": [
+        "form",
+        "login",
+        "signin",
+        "auth",
+        "password",
+        "email",
+        "remember"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/auth/LoginForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/LoginForm.tsx",
+      "lines": 165,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "PasswordResetForm",
+      "category": "form",
+      "subcategory": "auth",
+      "description": "Single-email password reset request with inline validation, pending state, and a success message.",
+      "keywords": [
+        "form",
+        "password",
+        "reset",
+        "forgot",
+        "recovery",
+        "auth",
+        "email"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/form/auth/PasswordResetForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/PasswordResetForm.tsx",
+      "lines": 130,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SignupForm",
+      "category": "form",
+      "subcategory": "auth",
+      "description": "Email + password + confirm + terms-acceptance with strength check, inline errors, and pending state.",
+      "keywords": [
+        "form",
+        "signup",
+        "register",
+        "account",
+        "auth",
+        "password",
+        "email",
+        "terms"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/auth/SignupForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/SignupForm.tsx",
+      "lines": 223,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "TwoFactorForm",
+      "category": "form",
+      "subcategory": "auth",
+      "description": "Six-digit (configurable) 2FA code input with monospace centered field, auto-submit on full code, resend link, and pending state.",
+      "keywords": [
+        "form",
+        "2fa",
+        "two factor",
+        "mfa",
+        "code",
+        "otp",
+        "verification",
+        "auth"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/auth/TwoFactorForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/auth/TwoFactorForm.tsx",
+      "lines": 151,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "ContactForm",
+      "category": "form",
+      "subcategory": "feedback",
+      "description": "Name + email + message (optional subject) with inline validation, pending state, and success confirmation.",
+      "keywords": [
+        "form",
+        "contact",
+        "message",
+        "support",
+        "inquiry",
+        "email",
+        "name"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/feedback/ContactForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/feedback/ContactForm.tsx",
+      "lines": 188,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "FeedbackSurvey",
+      "category": "form",
+      "subcategory": "feedback",
+      "description": "Star-rating (1–5, keyboard-accessible radio group) with optional comment and success state. Submits {rating, comment}.",
+      "keywords": [
+        "form",
+        "feedback",
+        "survey",
+        "rating",
+        "stars",
+        "review",
+        "nps",
+        "csat"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/feedback/FeedbackSurvey.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/feedback/FeedbackSurvey.tsx",
+      "lines": 159,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "FilterPanel",
+      "category": "form",
+      "subcategory": "search",
+      "description": "Side-panel filter UI — status checkboxes, sort radio group, reset + apply buttons. Controlled by parent via filters + onChange.",
+      "keywords": [
+        "form",
+        "filter",
+        "panel",
+        "sidebar",
+        "status",
+        "sort",
+        "refine"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/search/FilterPanel.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/search/FilterPanel.tsx",
+      "lines": 157,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SearchBox",
+      "category": "form",
+      "subcategory": "search",
+      "description": "Controlled search input with magnifying-glass icon, clear button when filled, optional submit-on-Enter, and a tiny keyboard-hint slot.",
+      "keywords": [
+        "form",
+        "search",
+        "input",
+        "query",
+        "find",
+        "filter"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/form/search/SearchBox.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/search/SearchBox.tsx",
+      "lines": 115,
+      "demos": [
+        "empty",
+        "with query"
+      ]
+    },
+    {
+      "name": "AccountSettings",
+      "category": "form",
+      "subcategory": "settings",
+      "description": "Two-section settings card — change password (current/new/confirm with min-length + match) plus a danger zone for account deletion (requires typing confirmation text).",
+      "keywords": [
+        "form",
+        "settings",
+        "account",
+        "password",
+        "change",
+        "delete",
+        "danger zone"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/kezreux-frontend/components/form/settings/AccountSettings.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/settings/AccountSettings.tsx",
+      "lines": 245,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "ProfileForm",
+      "category": "form",
+      "subcategory": "settings",
+      "description": "Pre-filled profile editor — name, email, bio (textarea), optional avatar URL. Dirty-state tracking, Save / Cancel actions, pending state.",
+      "keywords": [
+        "form",
+        "profile",
+        "settings",
+        "account",
+        "user",
+        "update",
+        "edit"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/form/settings/ProfileForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/form/settings/ProfileForm.tsx",
+      "lines": 202,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroMinimal",
+      "category": "hero",
+      "subcategory": null,
+      "description": "Maximalist whitespace, single headline, single CTA. Linear / Vercel feel.",
+      "keywords": [
+        "hero",
+        "minimal",
+        "clean",
+        "simple",
+        "whitespace",
+        "single"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/hero/HeroMinimal.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroMinimal.tsx",
+      "lines": 46,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroSimple",
+      "category": "hero",
+      "subcategory": null,
+      "description": "Centered hero with title, subtitle, primary CTA, and optional secondary CTA. The marketing default.",
+      "keywords": [
+        "hero",
+        "landing",
+        "marketing",
+        "cta",
+        "centered",
+        "headline"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/hero/HeroSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroSimple.tsx",
+      "lines": 74,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroSplit",
+      "category": "hero",
+      "subcategory": null,
+      "description": "Two-column hero — text + CTA on the left, visual slot (image, illustration, screenshot) on the right. SaaS classic.",
+      "keywords": [
+        "hero",
+        "split",
+        "two-column",
+        "saas",
+        "image",
+        "illustration",
+        "visual"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/hero/HeroSplit.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroSplit.tsx",
+      "lines": 97,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroWithForm",
+      "category": "hero",
+      "subcategory": null,
+      "description": "Centered hero with title, subtitle, and an inline email signup form. Newsletter / waitlist style with success state.",
+      "keywords": [
+        "hero",
+        "form",
+        "signup",
+        "email",
+        "waitlist",
+        "newsletter",
+        "subscribe"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/hero/HeroWithForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroWithForm.tsx",
+      "lines": 130,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroWithStats",
+      "category": "hero",
+      "subcategory": null,
+      "description": "Centered hero with headline, CTA, and a row of 3–4 social-proof stat blocks below. Conversion-focused.",
+      "keywords": [
+        "hero",
+        "stats",
+        "metrics",
+        "social proof",
+        "conversion",
+        "numbers",
+        "marketing"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
+      "lines": 99,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "MobileMenuDrawer",
+      "category": "navbar",
+      "subcategory": null,
+      "description": "Mobile-first hamburger menu that slides in a full-height drawer. Focus trap, ESC closes, tap outside closes.",
+      "keywords": [
+        "mobile",
+        "drawer",
+        "hamburger",
+        "menu",
+        "off-canvas",
+        "responsive",
+        "mobile-nav"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/kezreux-frontend/components/navbar/MobileMenuDrawer.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/MobileMenuDrawer.tsx",
+      "lines": 180,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SidebarVertical",
+      "category": "navbar",
+      "subcategory": null,
+      "description": "Full-height left sidebar with sections, icons, and optional bottom user block. App / dashboard layout.",
+      "keywords": [
+        "sidebar",
+        "vertical",
+        "navigation",
+        "dashboard",
+        "app",
+        "sections",
+        "side menu"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/navbar/SidebarVertical.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/SidebarVertical.tsx",
+      "lines": 127,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "TopNavSimple",
+      "category": "navbar",
+      "subcategory": null,
+      "description": "Clean horizontal top nav with logo and links. Optional CTA button on the right.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "header",
+        "navigation",
+        "marketing",
+        "landing"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavSimple.tsx",
+      "lines": 74,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "TopNavWithAuth",
+      "category": "navbar",
+      "subcategory": null,
+      "description": "Top nav with logo, links, and right-aligned auth state. Shows avatar dropdown when authenticated, sign-in CTAs otherwise.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "header",
+        "auth",
+        "login",
+        "user",
+        "avatar",
+        "dropdown"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/navbar/TopNavWithAuth.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavWithAuth.tsx",
+      "lines": 180,
+      "demos": [
+        "signed in",
+        "signed out"
+      ]
+    },
+    {
+      "name": "TopNavWithSearch",
+      "category": "navbar",
+      "subcategory": null,
+      "description": "Top nav with logo, center search input, and action icons on the right. App / dashboard feel.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "search",
+        "command palette",
+        "header",
+        "dashboard",
+        "app"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/navbar/TopNavWithSearch.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/kezreux-frontend/components/navbar/TopNavWithSearch.tsx",
+      "lines": 138,
+      "demos": [
+        "default"
+      ]
+    }
+  ]
+}

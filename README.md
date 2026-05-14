@@ -3,14 +3,17 @@
 A Claude Code plugin marketplace that ships **`frontend-power-tools`** — skills,
 subagents, slash commands, and hooks for frontend design and development work.
 
-> **v0.2.0-beta.1** adds a **theme system** (7 preset themes with full install
-> via `/theme set <name>`) and a **canonical rules engine** that every audit
-> skill enforces. The auto-loop orchestrator (`/build "intent"`) lands in
-> v0.2.0 final. Install with `/plugin marketplace update`; see
-> *What's new* below the install instructions.
-
 ## What it does
 
+- **One-shot frontend generation.** `/build "<intent>"` runs a bounded
+  internal loop — plan → write → self-review against the active theme +
+  rules → fix Blockers/Majors → return. Up to 3 iterations. No manual
+  intermediate approvals.
+- **Seven preset themes** (Minimal · Editorial · Brutalist · Soft · Playful
+  · Rustic · Industrial) — each a strict, machine-readable spec covering
+  colors, typography, spacing, radius, shadows, density, animation, and
+  iconography. Install with `/theme set <name>`; revert with
+  `/theme rollback`.
 - **Audits your UI changes** against the project's design system (tokens,
   component library, dark mode, responsive behavior, accessibility) before
   you ship.
@@ -45,28 +48,39 @@ subagents, and hooks into your session.
 Verify with `/tokens` — it should print your project's design tokens (or the
 Tailwind + shadcn fallback if no `CLAUDE.md` is present).
 
-## What's new in v0.2.0-beta.1
+## What's new in v0.2.0
 
-- **Theme system** — 7 preset themes (Minimal, Editorial, Brutalist, Soft,
-  Playful, Rustic, Industrial), each defined as a strict machine-readable
-  spec covering colors, typography, spacing, radius, shadows, density,
-  animation, and iconography. See `plugins/frontend-power-tools/themes/INDEX.md`
-  for the catalog. Install one with `/theme set <name>` — the install detects
-  your framework, backs up modified files, writes `src/styles/theme.ts` +
-  CLAUDE.md section + tailwind config merge + CSS vars, and verifies. Revert
-  any time with `/theme rollback`.
-- **Canonical rules engine** — `plugins/frontend-power-tools/rules/RULES.md`
-  is now the source of truth for 14 sections of opinionated rules (React+TS,
-  composition, state, a11y, responsive, tokens, file structure, naming,
-  imports, error handling, forms, performance, theming, comments). Every
-  audit skill loads it on invocation. Your project's `CLAUDE.md` is the
-  deviation layer — overrides always win.
-- **Auto-loop orchestrator (`/build "intent"`)** — coming in v0.2.0 final.
+- **`/build "<intent>"`** — the new auto-loop orchestrator. Describe what
+  you want in plain language; the `frontend-designer` Opus subagent plans,
+  writes the code under the active theme + RULES.md, then runs three
+  inline reviews (token-lint, design-review logic, a11y-audit logic),
+  auto-fixes every Blocker and Major it finds, and reports the result.
+  Capped at 3 iterations — if anything's left over, it's surfaced
+  explicitly, never silently accepted.
+- **Theme system.** 7 preset themes, 19 color tokens per theme (matches
+  the full shadcn/ui surface — including `card` and `popover` for
+  navbars, sidebars, dropdowns). Every foreground/background pair passes
+  WCAG AA body (4.5:1+) in both light and dark modes, audited across 140
+  contrast pairs. See `plugins/frontend-power-tools/themes/INDEX.md` for
+  the catalog. `/theme set` does a full install with dry-run-confirm,
+  `.pre-theme.bak` backups, verify-or-restore.
+- **Canonical rules engine.** `plugins/frontend-power-tools/rules/RULES.md`
+  is now the source of truth for 14 sections of opinionated rules
+  (React+TS, composition, state, a11y, responsive, tokens, file
+  structure, naming, imports, error handling, forms, performance,
+  theming, comments). Every audit skill loads it on invocation.
+- **`design-lint` hook.** New PostToolUse hook scans every UI-file edit
+  for hardcoded hex / `rgb()` / arbitrary `px` / literal `bg-white` /
+  magic `z-index` / static inline styles. Pure grep, no LLM. Surfaces
+  violations as exit-2 feedback so Claude self-corrects in the same
+  turn. Heavy LLM-driven reviews still live in `/build`, `/design-review`,
+  and `/a11y`.
 
 ## Commands
 
 | Command | What it does |
 | --- | --- |
+| `/build "<intent>"` | Generate code from a natural-language intent. Runs the full auto-loop: plan, write, self-review for theme/a11y/token violations, fix Blockers + Majors, return. Up to 3 iterations. Requires a theme installed via `/theme set`. |
 | `/theme [list \| <name> \| set <name> \| preview [n] \| rollback]` | Manage the active theme. `/theme` alone lists; `/theme <name>` installs the named theme with backup-restore safety; `/theme preview <name>` shows sample component code; `/theme rollback` restores `.pre-theme.bak` files. |
 | `/design-review` | Audits the current `git diff` against your design system. Read-only; reports findings as Blockers / Majors / Minors with `file:line` citations. Runs in the `design-reviewer` subagent so it gets its own context window. |
 | `/a11y [path]` | WCAG 2.1 AA accessibility audit. Defaults to the current diff; pass a path or glob to scope. Defers to `axe-core` if your project has it; otherwise does a structured manual pass. |
@@ -93,6 +107,7 @@ Automatic actions that fire on every Claude Code edit, no opt-in needed:
 | Event | Trigger | Effect |
 | --- | --- | --- |
 | `PostToolUse` | Write/Edit/MultiEdit on `.ts`, `.tsx`, `.js`, `.jsx`, `.mjs`, `.cjs`, `.css`, `.scss`, `.json`, `.md`, `.html`, `.vue`, `.svelte` | Runs `prettier --write` and `eslint --fix` on the changed file. Silently no-ops if neither is installed. |
+| `PostToolUse` | Write/Edit/MultiEdit on `.tsx`, `.jsx`, `.vue`, `.svelte` | **design-lint** — greps for hardcoded hex / `rgb()` / arbitrary `px` / literal `bg-white` / magic `z-index` / static inline styles. Surfaces violations as exit-2 stderr → Claude self-corrects mid-turn. Skips the project's own token files. |
 | `PostToolUse` | Write/Edit/MultiEdit on `.ts`, `.tsx` | Runs `tsc --noEmit --incremental` (30s timeout). If any errors mention the file just edited, surfaces them back to Claude as feedback so it can fix them in the same turn. |
 | `SessionStart` | Once per session | If no `CLAUDE.md` exists in `./`, `./.claude/`, or `./docs/`, prints a one-line reminder for Claude to suggest the user create one. |
 
@@ -135,7 +150,31 @@ reviews still work, but they're less project-aware.
 
 ## Example workflows
 
-### Review after a feature
+### One-shot generate (the centerpiece flow)
+
+```text
+You:    /theme set minimal              # one-time, installs the theme
+You:    /build "settings page with profile form, dark-mode toggle, avatar upload"
+Claude: ## Plan
+        Intent:    A user-settings page with a profile form...
+        Theme:     Minimal
+        Will create:
+          - src/components/settings/SettingsPage.tsx
+          - src/components/settings/AvatarUpload.tsx
+          - src/components/settings/SettingsPage.test.tsx
+        Constraints: tokens-only, WCAG AA, mobile-first
+
+        <writes files>
+        <inline reviews: token-lint, design-review, a11y-audit>
+        <auto-fixes Blockers + Majors over 2 iterations>
+
+        ## Built: settings page
+        Iterations: 2
+        Auto-fixed: 3 Blockers, 4 Majors
+        Remaining minors: 1 — SettingsPage.tsx:47 magic z-index
+```
+
+### Review after manual work
 
 ```text
 You:    Build a settings page with a profile form and a dark-mode toggle.

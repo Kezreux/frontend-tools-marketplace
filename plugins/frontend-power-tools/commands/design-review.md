@@ -4,7 +4,7 @@ argument-hint: [path-or-glob]
 ---
 
 Invoke the `design-reviewer` subagent using the Task tool with
-`subagent_type: design-reviewer`.
+`subagent_type: frontend-power-tools:design-reviewer`.
 
 Prompt to send the subagent:
 

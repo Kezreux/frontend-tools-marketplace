@@ -4,7 +4,7 @@ argument-hint: [route-or-routes]
 ---
 
 Invoke the `visual-reviewer` subagent using the Task tool with
-`subagent_type: visual-reviewer`.
+`subagent_type: frontend-power-tools:visual-reviewer`.
 
 Prompt to send the subagent:
 

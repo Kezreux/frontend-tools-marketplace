@@ -1,4 +1,4 @@
-# frontend-tools-marketplace
+# kezreux-marketplace
 
 A Claude Code plugin marketplace that ships **`kezreux-frontend`** — skills,
 subagents, slash commands, and hooks for frontend design and development work.
@@ -37,7 +37,7 @@ In any project on any machine where Claude Code is configured:
 
 ```text
 /plugin marketplace add Kezreux/kezreux-frontend
-/plugin install kezreux-frontend@frontend-tools-marketplace
+/plugin install kezreux-frontend@kezreux-marketplace
 /reload-plugins
 ```
 
@@ -216,7 +216,7 @@ install registers the plugin in the marketplace cache; the reload binds it
 into your session. Always run all three install commands.
 
 **`Agent type '...' not found`.** Your local copy is on a plugin version
-before the namespace fix. Run `/plugin marketplace update frontend-tools-marketplace`
+before the namespace fix. Run `/plugin marketplace update kezreux-marketplace`
 then `/reload-plugins`.
 
 **`/visual-check` says no browser backend is available.** Install one:
@@ -244,23 +244,23 @@ Iterate on the plugin without publishing by pointing the marketplace at
 this directory:
 
 ```text
-/plugin marketplace add /absolute/path/to/frontend-tools-marketplace
-/plugin install kezreux-frontend@frontend-tools-marketplace
+/plugin marketplace add /absolute/path/to/kezreux-marketplace
+/plugin install kezreux-frontend@kezreux-marketplace
 /reload-plugins
 ```
 
 After editing a skill, subagent, command, or hook:
 
 ```text
-/plugin marketplace update frontend-tools-marketplace
+/plugin marketplace update kezreux-marketplace
 /reload-plugins
 ```
 
 To uninstall cleanly:
 
 ```text
-/plugin uninstall kezreux-frontend@frontend-tools-marketplace
-/plugin marketplace remove frontend-tools-marketplace
+/plugin uninstall kezreux-frontend@kezreux-marketplace
+/plugin marketplace remove kezreux-marketplace
 ```
 
 ### Project layout

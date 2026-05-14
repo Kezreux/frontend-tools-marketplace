@@ -19,22 +19,34 @@ new content.
 A "deploy hook" is a webhook URL that triggers a fresh deploy when called.
 Every modern static-hosting provider has them.
 
+**Cloudflare Pages** (the recommended path for this project):
+1. Cloudflare dashboard → Workers & Pages → your project.
+2. **Settings** → **Builds & deployments** → **Deploy hooks** section.
+3. **Add deploy hook**. Name it `plugin-catalog-update`, target the
+   production branch (usually `main`).
+4. Copy the URL Cloudflare gives you. It looks like:
+   `https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/<uuid>`
+
+If your wiki sits behind Cloudflare Access (auth-gated public URL), the
+deploy hook itself is unaffected — it's an API endpoint, not a page view.
+You can keep the deployed site behind Access and the automation still
+fires correctly.
+
 **Vercel:**
 1. Open your website project in the Vercel dashboard.
 2. Settings → Git → Deploy Hooks.
 3. Click **Create Hook**. Name it `plugin-catalog-update`, target the
-   `main` branch (or whichever branch your production site builds from).
-4. Copy the URL Vercel gives you. It looks like:
-   `https://api.vercel.com/v1/integrations/deploy/prj_abc.../xyz`
+   `main` branch.
+4. URL looks like: `https://api.vercel.com/v1/integrations/deploy/prj_abc.../xyz`.
 
 **Netlify:**
 1. Open your site in the Netlify dashboard.
 2. Site configuration → Build & deploy → Build hooks.
 3. Add build hook, name `plugin-catalog-update`, branch `main`.
-4. Copy the URL: `https://api.netlify.com/build_hooks/<hash>`.
+4. URL: `https://api.netlify.com/build_hooks/<hash>`.
 
-**Cloudflare Pages, Render, Railway:** similar pattern, look for "deploy
-hook" or "build hook" in the project settings.
+**Render, Railway, self-hosted with a build server:** same pattern —
+provider's settings → deploy hook / build hook → create → copy URL.
 
 ### 2. Store the hook URL as a repo secret
 
@@ -199,6 +211,25 @@ Vercel/Netlify rebuilds the website
    ▼
 Live at https://your-wiki.example.com
 ```
+
+## Architecture note: wiki on Cloudflare Pages + backend on your own server
+
+The automation in this file only cares about *the wiki redeploying*. If
+your stack is:
+
+- **Wiki frontend** on Cloudflare Pages (static, builds from a Git repo)
+- **Backend API** on your own server (handles auth, premium content,
+  Stripe, etc.)
+
+then this file's contents covers the wiki side completely. The backend
+runs independently — your wiki can call it for authenticated features
+(account, premium component fetches, payment flows), but the catalog
+itself stays public (just JSON on GitHub) so the wiki's free tier renders
+without backend availability concerns.
+
+If you later split the backend into per-service VMs, none of this
+changes. The wiki keeps pointing at the public catalog URL; the backend
+moves around as needed.
 
 ## Verifying it works
 

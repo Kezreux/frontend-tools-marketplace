@@ -1,7 +1,17 @@
 {
   "version": "1",
-  "generatedAt": "2026-05-14T19:17:28.000Z",
+  "generatedAt": "2026-05-14T20:17:24.000Z",
   "categories": [
+    {
+      "id": "data",
+      "label": "Data display",
+      "count": 5
+    },
+    {
+      "id": "feedback",
+      "label": "Feedback",
+      "count": 5
+    },
     {
       "id": "form",
       "label": "Forms",
@@ -35,12 +45,248 @@
       "count": 5
     },
     {
+      "id": "layout",
+      "label": "Layout",
+      "count": 4
+    },
+    {
+      "id": "marketing",
+      "label": "Marketing",
+      "count": 5
+    },
+    {
       "id": "navbar",
       "label": "Navigation",
       "count": 5
     }
   ],
   "components": [
+    {
+      "name": "DataTable",
+      "category": "data",
+      "subcategory": null,
+      "description": "Sortable, responsive data table — declarative column schema, sortable headers (click to cycle asc/desc), striped rows, optional row click handler, empty-state slot.",
+      "keywords": [
+        "data",
+        "table",
+        "grid",
+        "sortable",
+        "rows",
+        "columns",
+        "list"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/kezreux-frontend/components/data/DataTable.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/data/DataTable.tsx",
+      "lines": 169,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "KeyValueList",
+      "category": "data",
+      "subcategory": null,
+      "description": "Definition-list pattern (dt/dd) for metadata display — label on the left, value on the right. Works well for invoice details, settings summaries, \"About\" panels.",
+      "keywords": [
+        "data",
+        "key-value",
+        "definition",
+        "metadata",
+        "details",
+        "dl",
+        "summary"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/data/KeyValueList.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/data/KeyValueList.tsx",
+      "lines": 85,
+      "demos": [
+        "default",
+        "stacked"
+      ]
+    },
+    {
+      "name": "StatCard",
+      "category": "data",
+      "subcategory": null,
+      "description": "Single-metric card — label, big numeric value, optional change indicator (with up/down arrow and percentage), optional period suffix.",
+      "keywords": [
+        "data",
+        "stat",
+        "metric",
+        "kpi",
+        "number",
+        "dashboard",
+        "card"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/data/StatCard.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/data/StatCard.tsx",
+      "lines": 92,
+      "demos": [
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    },
+    {
+      "name": "Timeline",
+      "category": "data",
+      "subcategory": null,
+      "description": "Vertical timeline of events — time, title, description, optional icon, status tint (default/success/warning/error). Connector line drawn between event dots.",
+      "keywords": [
+        "data",
+        "timeline",
+        "activity",
+        "log",
+        "events",
+        "history",
+        "audit"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/data/Timeline.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/data/Timeline.tsx",
+      "lines": 94,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "UserList",
+      "category": "data",
+      "subcategory": null,
+      "description": "List of users with avatar (image or initials fallback), name, email, role, and per-row action menu slot. For team/member screens, recipient pickers, etc.",
+      "keywords": [
+        "data",
+        "user",
+        "list",
+        "team",
+        "members",
+        "avatar",
+        "contacts"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/data/UserList.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/data/UserList.tsx",
+      "lines": 111,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "AlertBanner",
+      "category": "feedback",
+      "subcategory": null,
+      "description": "Inline alert banner with variant (info/success/warning/error), icon, title, description, optional action button, optional dismiss button.",
+      "keywords": [
+        "alert",
+        "banner",
+        "callout",
+        "notice",
+        "warning",
+        "info",
+        "error",
+        "inline"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/feedback/AlertBanner.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/feedback/AlertBanner.tsx",
+      "lines": 126,
+      "demos": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ]
+    },
+    {
+      "name": "EmptyState",
+      "category": "feedback",
+      "subcategory": null,
+      "description": "Centered empty-state placeholder with optional icon, title, description, and primary action. For empty lists, dashboards, and zero-result pages.",
+      "keywords": [
+        "empty",
+        "placeholder",
+        "nothing",
+        "zero-state",
+        "no-data"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/feedback/EmptyState.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/feedback/EmptyState.tsx",
+      "lines": 67,
+      "demos": [
+        "default",
+        "no results"
+      ]
+    },
+    {
+      "name": "LoadingSpinner",
+      "category": "feedback",
+      "subcategory": null,
+      "description": "Animated loading spinner using Tailwind's animate-spin, with size variants and optional label below.",
+      "keywords": [
+        "loading",
+        "spinner",
+        "loader",
+        "busy",
+        "progress",
+        "indicator"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/feedback/LoadingSpinner.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/feedback/LoadingSpinner.tsx",
+      "lines": 45,
+      "demos": [
+        "default",
+        "small",
+        "large"
+      ]
+    },
+    {
+      "name": "Modal",
+      "category": "feedback",
+      "subcategory": null,
+      "description": "Centered dialog with backdrop, focus on open, ESC + click-outside close, scrollable body, optional primary/secondary actions. Body scroll locked while open.",
+      "keywords": [
+        "modal",
+        "dialog",
+        "overlay",
+        "popup",
+        "backdrop",
+        "alertdialog"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/kezreux-frontend/components/feedback/Modal.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/feedback/Modal.tsx",
+      "lines": 150,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "Toast",
+      "category": "feedback",
+      "subcategory": null,
+      "description": "Slide-in notification with variant (info/success/warning/error), optional title + description, auto-dismiss timer, close button. Single controlled instance — pair with a ToastProvider in your app for queueing.",
+      "keywords": [
+        "toast",
+        "notification",
+        "snackbar",
+        "alert",
+        "popup",
+        "message"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/feedback/Toast.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/feedback/Toast.tsx",
+      "lines": 103,
+      "demos": [
+        "success",
+        "error"
+      ]
+    },
     {
       "name": "LoginForm",
       "category": "form",
@@ -368,6 +614,195 @@
       "filePath": "plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
       "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/hero/HeroWithStats.tsx",
       "lines": 99,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "CenteredPage",
+      "category": "layout",
+      "subcategory": null,
+      "description": "Max-width centered content wrapper with responsive padding. Used as a page container for marketing pages, blog posts, settings views.",
+      "keywords": [
+        "layout",
+        "page",
+        "container",
+        "centered",
+        "max-width",
+        "wrapper"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/layout/CenteredPage.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/layout/CenteredPage.tsx",
+      "lines": 76,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "DashboardGrid",
+      "category": "layout",
+      "subcategory": null,
+      "description": "Responsive CSS-grid container for dashboard widgets. Defaults to 1 column on mobile, 2 on tablet, 3 on desktop (configurable). Children apply col-span-* / row-span-* classes manually for wider/taller cells.",
+      "keywords": [
+        "layout",
+        "dashboard",
+        "grid",
+        "widgets",
+        "responsive"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/layout/DashboardGrid.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/layout/DashboardGrid.tsx",
+      "lines": 64,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "FullPageLayout",
+      "category": "layout",
+      "subcategory": null,
+      "description": "Full-bleed page shell — sticky header, flexible main, sticky-or-static footer. Header and footer slots can be any ReactNode. Min-height: full screen.",
+      "keywords": [
+        "layout",
+        "shell",
+        "header",
+        "footer",
+        "full-page",
+        "sticky"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/layout/FullPageLayout.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/layout/FullPageLayout.tsx",
+      "lines": 80,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SidebarLayout",
+      "category": "layout",
+      "subcategory": null,
+      "description": "Sidebar + main content shell. Sidebar is fixed-width on desktop, hidden on mobile (drawer handled separately). Supports left or right placement.",
+      "keywords": [
+        "layout",
+        "sidebar",
+        "shell",
+        "app",
+        "dashboard",
+        "two-column"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/layout/SidebarLayout.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/layout/SidebarLayout.tsx",
+      "lines": 87,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "CTABanner",
+      "category": "marketing",
+      "subcategory": null,
+      "description": "In-page call-to-action section with title, optional description, primary CTA, optional secondary CTA. More compact than a hero — designed for use mid-page or above the footer.",
+      "keywords": [
+        "marketing",
+        "cta",
+        "banner",
+        "conversion",
+        "section",
+        "signup"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/marketing/CTABanner.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/marketing/CTABanner.tsx",
+      "lines": 86,
+      "demos": [
+        "default",
+        "primary"
+      ]
+    },
+    {
+      "name": "FAQAccordion",
+      "category": "marketing",
+      "subcategory": null,
+      "description": "Disclosure-pattern FAQ accordion — click a question to expand its answer. ARIA-correct (aria-expanded, aria-controls, button-based triggers).",
+      "keywords": [
+        "marketing",
+        "faq",
+        "accordion",
+        "disclosure",
+        "expandable",
+        "questions"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/marketing/FAQAccordion.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/marketing/FAQAccordion.tsx",
+      "lines": 143,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "FeatureGrid",
+      "category": "marketing",
+      "subcategory": null,
+      "description": "Responsive grid of feature blocks — icon, title, description. Configurable column count, optional section heading.",
+      "keywords": [
+        "marketing",
+        "features",
+        "grid",
+        "benefits",
+        "capabilities"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/kezreux-frontend/components/marketing/FeatureGrid.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/marketing/FeatureGrid.tsx",
+      "lines": 101,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "LogoCloud",
+      "category": "marketing",
+      "subcategory": null,
+      "description": "Grid of customer/partner logos with optional heading. Each slot is a ReactNode — pass img tags, SVGs, or styled text wordmarks.",
+      "keywords": [
+        "marketing",
+        "logos",
+        "customers",
+        "partners",
+        "trust",
+        "social-proof",
+        "brands"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/kezreux-frontend/components/marketing/LogoCloud.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/marketing/LogoCloud.tsx",
+      "lines": 80,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "PricingTable",
+      "category": "marketing",
+      "subcategory": null,
+      "description": "Three-tier (configurable) pricing table with featured-tier highlight, monthly/annual billing toggle slot, feature checklist per tier, and per-tier CTA.",
+      "keywords": [
+        "marketing",
+        "pricing",
+        "plans",
+        "tiers",
+        "subscription",
+        "billing"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/kezreux-frontend/components/marketing/PricingTable.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/kezreux-frontend/main/plugins/kezreux-frontend/components/marketing/PricingTable.tsx",
+      "lines": 145,
       "demos": [
         "default"
       ]

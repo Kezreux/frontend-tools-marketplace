@@ -1,0 +1,17 @@
+{
+  "name": "frontend-tools-marketplace",
+  "owner": {
+    "name": "Kezreux"
+  },
+  "metadata": {
+    "description": "Reusable Claude Code tooling for frontend design and development work.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "frontend-power-tools",
+      "source": "./plugins/frontend-power-tools",
+      "description": "Skills, subagents, slash commands, and hooks that optimize Claude Code for frontend design — design reviews, a11y audits, component scaffolding, visual checks, token linting, plus formatting/typecheck hooks."
+    }
+  ]
+}

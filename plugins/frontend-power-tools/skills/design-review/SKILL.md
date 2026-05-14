@@ -14,6 +14,13 @@ A read-only audit of frontend changes against the host project's design system.
 Produce a structured, prioritized list of findings. Do **not** make edits — the
 caller decides what to fix.
 
+## Authority
+
+Load the canonical rules from `${CLAUDE_PLUGIN_ROOT}/rules/RULES.md` on every
+invocation. The host project's `CLAUDE.md` is the deviation layer — where it
+explicitly overrides a rule, the project wins; otherwise RULES.md is mandatory.
+The active theme at `src/styles/theme.ts` defines legal token values.
+
 ## Inputs
 
 - **Default:** `git diff` from the working tree against the merge-base with the

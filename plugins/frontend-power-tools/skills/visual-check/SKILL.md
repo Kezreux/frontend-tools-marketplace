@@ -14,6 +14,13 @@ Orchestrates a screenshot → critique loop. Drives a real browser, captures the
 UI under review, and compares it to the design intent inferred from the diff
 and `CLAUDE.md`. Returns a structured critique.
 
+## Authority
+
+Load the canonical rules from `${CLAUDE_PLUGIN_ROOT}/rules/RULES.md` for
+context on what "correct" looks like — especially sections 5 (Responsive),
+6 (Tokens), and 13 (Theming & dark mode). Critique findings against the
+active theme at `src/styles/theme.ts`.
+
 ## Inputs
 
 - **Default:** the routes affected by `git diff` (inferred from changed

@@ -13,6 +13,13 @@ allowed-tools:
 A read-only WCAG 2.1 AA audit of frontend changes. Produce a prioritized findings
 list. Do **not** make edits — the caller decides what to fix.
 
+## Authority
+
+Load the canonical rules from `${CLAUDE_PLUGIN_ROOT}/rules/RULES.md` on every
+invocation — especially section 4 (Accessibility). The host project's
+`CLAUDE.md` is the deviation layer; where it overrides a rule, the project
+wins, otherwise RULES.md is mandatory.
+
 ## Inputs
 
 - **Default:** `git diff` against the merge-base with the default branch.

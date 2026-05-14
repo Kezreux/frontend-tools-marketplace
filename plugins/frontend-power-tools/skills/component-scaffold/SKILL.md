@@ -16,6 +16,15 @@ Generates a new component (plus the project's standard sibling files —
 stories, tests, index re-exports) following the host project's existing
 conventions. Don't impose a foreign style; **mirror what already exists.**
 
+## Authority
+
+Load the canonical rules from `${CLAUDE_PLUGIN_ROOT}/rules/RULES.md` on every
+invocation — especially sections 1 (React + TS), 2 (Composition), 7 (File
+structure), and 8 (Naming). The host project's `CLAUDE.md` is the deviation
+layer; mirror its existing component conventions over RULES.md defaults when
+they differ. The active theme at `src/styles/theme.ts` defines legal token
+values for any generated styles.
+
 ## Inputs
 
 - **Required:** component name (PascalCase). Accept from user as

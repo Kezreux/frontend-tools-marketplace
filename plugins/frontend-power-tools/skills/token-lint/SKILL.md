@@ -14,6 +14,13 @@ Static scan for hardcoded design values — the kind of drift that erodes a
 design system over time. Read-only; reports violations with suggested
 replacements.
 
+## Authority
+
+Load the canonical rules from `${CLAUDE_PLUGIN_ROOT}/rules/RULES.md` on every
+invocation — especially section 6 (Design tokens). The active theme at
+`src/styles/theme.ts` defines the legal value set; anything outside that set
+is a violation.
+
 ## Inputs
 
 - **Default:** all frontend source under `src/` (or the project's source

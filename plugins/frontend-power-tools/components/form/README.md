@@ -1,46 +1,75 @@
 # form
 
-Five form presets covering the universal patterns: authentication
-(login, signup, password reset), communication (contact), and user
-management (profile).
+Ten form presets organized into four subcategories. Pick by subcategory
+when browsing, or install by name directly (the shorthand
+`/component form LoginForm` works because names are globally unique).
 
-| Preset | Best for | Complexity |
+## auth — authentication flows
+
+| Preset | Complexity | Best for |
 | --- | --- | --- |
-| `LoginForm` | Auth — email + password sign-in, remember-me, forgot-password and sign-up links | Medium |
-| `SignupForm` | Auth — email + password + confirm + terms-acceptance with min-length + match checks | Medium |
-| `PasswordResetForm` | Auth recovery — single-email request with success state and back-to-login link | Simple |
-| `ContactForm` | Communication — name + email + message (optional subject) with success state | Medium |
-| `ProfileForm` | Settings — pre-filled name + email + bio (+ optional avatar URL) with dirty-state Save / Cancel | Medium |
+| `LoginForm` | medium | Email + password sign-in, remember-me, forgot-password and sign-up links |
+| `SignupForm` | medium | Email + password + confirm + terms with min-length + match validation |
+| `PasswordResetForm` | simple | Single-email request → success state → back-to-login |
+| `TwoFactorForm` | medium | 6-digit (configurable) OTP entry, auto-submit on full code, resend link |
 
-All five follow the same patterns:
+## feedback — user input you collect
+
+| Preset | Complexity | Best for |
+| --- | --- | --- |
+| `ContactForm` | medium | Name + email + (optional subject) + message → success state |
+| `FeedbackSurvey` | medium | Star rating + optional comment → success state |
+
+## settings — account management
+
+| Preset | Complexity | Best for |
+| --- | --- | --- |
+| `ProfileForm` | medium | Editable name / email / bio / avatar URL with dirty-state Save/Cancel |
+| `AccountSettings` | complex | Change-password + danger-zone delete with typed confirmation |
+
+## search — finding and filtering
+
+| Preset | Complexity | Best for |
+| --- | --- | --- |
+| `SearchBox` | simple | Controlled search input with icon, clear button, optional submit-on-Enter |
+| `FilterPanel` | medium | Side-panel filter with status checkboxes + sort radios + reset/apply |
+
+## Patterns shared across all 10
 
 - **Controlled inputs** with `useState` per field.
-- **Submit-time validation** (no per-keystroke noise). Failed fields get
-  `aria-invalid="true"` + `aria-describedby` pointing at the error text.
-- **Pending state** disables the submit button and shows a loading label
-  ("Sending...", "Signing in..."). Prevents double-submits.
-- **Success/done state** for one-shot forms (PasswordReset, Contact).
-- **Form-level error** for failures from `onSubmit` (network errors, etc.)
-  — rendered with `role="alert"`.
-- **A11y**: every input labeled via `htmlFor`/`id`, `<form noValidate>`
-  with custom JS validation, errors announced via `role="alert"`.
-- **Token-only** styling: `bg-card`, `border-input`, `text-foreground`,
+- **Submit-time validation** only — no per-keystroke noise (per RULES.md §11).
+- Failed fields get `aria-invalid="true"` + `aria-describedby` pointing at
+  error text rendered with `role="alert"`.
+- **Pending state** disables the submit button and changes its label
+  ("Saving...", "Signing in...").
+- **Success / done state** for one-shot forms (`PasswordResetForm`,
+  `ContactForm`, `FeedbackSurvey`).
+- **Form-level error** for `onSubmit` failures (network etc.), surfaced
+  with `role="alert"`.
+- **Token-only styling**: `bg-card`, `border-input`, `text-foreground`,
   `text-muted-foreground`, `text-destructive`, `ring-ring`, etc.
+- **No external imports beyond `react`** — components drop into any
+  React + Tailwind project as-is.
 
 ## Install
 
+```text
+/component form auth LoginForm           # explicit subcategory
+/component form LoginForm                # shorthand — name is unique
+/component form auth list                # list just the auth subcategory
+/component preview FilterPanel           # show source without installing
 ```
-/component form LoginForm
-/component form SignupForm
-/component form ProfileForm
-```
+
+The install command preserves the subcategory in the target path —
+`form/auth/LoginForm.tsx` installs to `src/components/form/auth/LoginForm.tsx`
+(or your project's detected convention).
 
 ## Usage examples
 
 ### LoginForm
 
 ```tsx
-import { LoginForm } from "@/components/form/LoginForm";
+import { LoginForm } from "@/components/form/auth/LoginForm";
 
 <LoginForm
   onSubmit={async ({ email, password, remember }) => {
@@ -51,76 +80,84 @@ import { LoginForm } from "@/components/form/LoginForm";
 />
 ```
 
-### SignupForm
+### TwoFactorForm
 
 ```tsx
-import { SignupForm } from "@/components/form/SignupForm";
+import { TwoFactorForm } from "@/components/form/auth/TwoFactorForm";
 
-<SignupForm
-  onSubmit={async ({ email, password }) => {
-    await api.signUp({ email, password });
+<TwoFactorForm
+  onSubmit={async (code) => {
+    await api.verify2FA(code);
   }}
-  onSignIn={() => router.push("/login")}
-  termsHref="/terms"
-  privacyHref="/privacy"
+  onResend={async () => {
+    await api.resend2FA();
+  }}
 />
 ```
 
-### PasswordResetForm
+### FeedbackSurvey
 
 ```tsx
-import { PasswordResetForm } from "@/components/form/PasswordResetForm";
+import { FeedbackSurvey } from "@/components/form/feedback/FeedbackSurvey";
 
-<PasswordResetForm
-  onSubmit={async (email) => {
-    await api.requestPasswordReset(email);
-  }}
-  onBackToLogin={() => router.push("/login")}
-/>
-```
-
-### ContactForm
-
-```tsx
-import { ContactForm } from "@/components/form/ContactForm";
-
-<ContactForm
-  onSubmit={async ({ name, email, subject, message }) => {
-    await fetch("/api/contact", {
+<FeedbackSurvey
+  onSubmit={async ({ rating, comment }) => {
+    await fetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ name, email, subject, message }),
+      body: JSON.stringify({ rating, comment }),
     });
   }}
-  showSubject
+  description="Your feedback helps us improve."
 />
 ```
 
-### ProfileForm
+### AccountSettings
 
 ```tsx
-import { ProfileForm } from "@/components/form/ProfileForm";
+import { AccountSettings } from "@/components/form/settings/AccountSettings";
 
-<ProfileForm
-  initialValues={{
-    name: user.name,
-    email: user.email,
-    bio: user.bio,
-    avatarUrl: user.avatarUrl,
+<AccountSettings
+  onChangePassword={async ({ currentPassword, newPassword }) => {
+    await api.changePassword({ currentPassword, newPassword });
   }}
-  onSubmit={async (values) => {
-    await api.updateProfile(values);
+  onDeleteAccount={async () => {
+    await api.deleteAccount();
+    router.push("/goodbye");
   }}
-  onCancel={() => router.back()}
+  deleteConfirmationText="DELETE"
 />
 ```
 
-## Validation policy
+### SearchBox
 
-These presets **only** validate on submit. The rationale (from
-`RULES.md` §11):
+```tsx
+import { useState } from "react";
+import { SearchBox } from "@/components/form/search/SearchBox";
 
-> Validate on blur, surface errors on submit. Don't validate per-keystroke
-> unless the user explicitly asks.
+const [q, setQ] = useState("");
 
-If you need per-keystroke validation (e.g., "password strength meter"),
-fork the component and lift the validation into an `onChange` handler.
+<SearchBox
+  value={q}
+  onChange={setQ}
+  onSubmit={(value) => router.push(`/search?q=${encodeURIComponent(value)}`)}
+  placeholder="Search docs..."
+  hint="⌘K"
+/>
+```
+
+### FilterPanel
+
+```tsx
+import { useState } from "react";
+import { FilterPanel } from "@/components/form/search/FilterPanel";
+
+const [filters, setFilters] = useState({ status: ["active"], sortBy: "newest" });
+
+<FilterPanel
+  filters={filters}
+  onApply={(next) => {
+    setFilters(next);
+    refetch({ ...query, ...next });
+  }}
+/>
+```

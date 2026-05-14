@@ -2,8 +2,11 @@
 /**
  * build-catalog.mjs
  *
- * Scans plugins/frontend-power-tools/components/<category>/*.tsx and
- * produces plugins/frontend-power-tools/components/catalog.json.
+ * Scans the components directory and produces catalog.json. Supports
+ * both flat categories and nested subcategories:
+ *
+ *   components/<category>/<Name>.tsx                — top-level (no subcategory)
+ *   components/<category>/<subcategory>/<Name>.tsx  — sub-grouped
  *
  * Every component file must have:
  *   1. Five metadata header tags (@component, @category, @description,
@@ -42,6 +45,14 @@ const CATEGORY_LABELS = {
   marketing: "Marketing",
 };
 
+const SUBCATEGORY_LABELS = {
+  auth:     "Authentication",
+  feedback: "Feedback",
+  settings: "Settings",
+  search:   "Search & filter",
+  data:     "Data collection",
+};
+
 const REQUIRED_TAGS = ["component", "category", "description", "keywords", "complexity"];
 const errors = [];
 const components = [];
@@ -53,12 +64,25 @@ if (!existsSync(COMPONENTS)) {
   process.exit(1);
 }
 
-for (const entry of readdirSync(COMPONENTS)) {
-  const dir = join(COMPONENTS, entry);
-  if (!statSync(dir).isDirectory() || entry.startsWith("_")) continue;
-  for (const file of readdirSync(dir)) {
-    if (!file.endsWith(".tsx") || file.startsWith("_")) continue;
-    processComponent(join(dir, file));
+for (const catEntry of readdirSync(COMPONENTS)) {
+  const catDir = join(COMPONENTS, catEntry);
+  if (!statSync(catDir).isDirectory() || catEntry.startsWith("_")) continue;
+
+  for (const item of readdirSync(catDir)) {
+    if (item.startsWith("_")) continue;
+    const itemPath = join(catDir, item);
+    const isDir    = statSync(itemPath).isDirectory();
+
+    if (isDir) {
+      // Subcategory directory — recurse one level
+      for (const file of readdirSync(itemPath)) {
+        if (!file.endsWith(".tsx") || file.startsWith("_")) continue;
+        processComponent(join(itemPath, file), catEntry, item);
+      }
+    } else if (item.endsWith(".tsx")) {
+      // Flat component (no subcategory)
+      processComponent(itemPath, catEntry, null);
+    }
   }
 }
 
@@ -69,14 +93,28 @@ if (errors.length > 0) {
 }
 
 const categoryIds = [...new Set(components.map(c => c.category))].sort();
-const categories  = categoryIds.map(id => ({
-  id,
-  label: CATEGORY_LABELS[id] || id.charAt(0).toUpperCase() + id.slice(1),
-  count: components.filter(c => c.category === id).length,
-}));
+const categories  = categoryIds.map(id => {
+  const inCat       = components.filter(c => c.category === id);
+  const subcatIds   = [...new Set(inCat.map(c => c.subcategory).filter(Boolean))].sort();
+  const entry       = {
+    id,
+    label: CATEGORY_LABELS[id] || id.charAt(0).toUpperCase() + id.slice(1),
+    count: inCat.length,
+  };
+  if (subcatIds.length > 0) {
+    entry.subcategories = subcatIds.map(subId => ({
+      id:    subId,
+      label: SUBCATEGORY_LABELS[subId] || subId.charAt(0).toUpperCase() + subId.slice(1),
+      count: inCat.filter(c => c.subcategory === subId).length,
+    }));
+  }
+  return entry;
+});
 
 components.sort((a, b) =>
-  a.category.localeCompare(b.category) || a.name.localeCompare(b.name)
+  a.category.localeCompare(b.category)
+  || (a.subcategory ?? "").localeCompare(b.subcategory ?? "")
+  || a.name.localeCompare(b.name)
 );
 
 const now = new Date();
@@ -98,7 +136,7 @@ console.log(
 
 // ---- helpers ----
 
-function processComponent(filePath) {
+function processComponent(filePath, categoryFromPath, subcategory) {
   const source  = readFileSync(filePath, "utf-8");
   const relPath = relative(REPO_ROOT, filePath).replace(/\\/g, "/");
 
@@ -115,12 +153,21 @@ function processComponent(filePath) {
   }
   if (REQUIRED_TAGS.some(t => !meta[t])) return;
 
+  // The @category header must match the parent directory name.
+  if (meta.category !== categoryFromPath) {
+    errors.push(
+      `${relPath}: @category is "${meta.category}" but the file is under "${categoryFromPath}/". They must match.`
+    );
+    return;
+  }
+
   const demoKeys = parseDemos(source, relPath);
   if (demoKeys === null) return;
 
   components.push({
     name:        meta.component,
     category:    meta.category,
+    subcategory: subcategory ?? null,
     description: meta.description,
     keywords:    meta.keywords.split(",").map(k => k.trim()).filter(Boolean),
     complexity:  meta.complexity,

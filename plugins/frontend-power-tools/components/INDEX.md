@@ -18,11 +18,16 @@ In a project with a theme already installed (`/theme set <name>`):
 
 ## Categories
 
-| Category | Components | What's in it |
-| --- | --- | --- |
-| `navbar` | 5 | Top navs (simple, with auth, with search), vertical sidebar, mobile menu drawer |
-| `hero`   | 5 | Simple, minimal, split (with visual), with-form (email signup), with-stats |
-| `form`   | 5 | Login, signup, password reset, contact, profile editor — all with submit-time validation + pending state |
+| Category | Components | Subcategories | What's in it |
+| --- | --- | --- | --- |
+| `navbar` | 5 | — | Top navs (simple, with auth, with search), vertical sidebar, mobile menu drawer |
+| `hero`   | 5 | — | Simple, minimal, split (with visual), with-form (email signup), with-stats |
+| `form`   | 10 | `auth` (4), `feedback` (2), `settings` (2), `search` (2) | Login, signup, password reset, 2FA, contact, feedback survey, profile, account settings, search box, filter panel |
+
+Categories use **optional 2-level nesting**. Flat categories (`navbar`,
+`hero`) keep their `.tsx` files directly under the category dir.
+Categories that benefit from grouping (`form`) split into subcategory
+folders. The generator and `/component` command handle both shapes.
 
 More categories ship as v0.3 expands: **data**, **feedback**,
 **marketing**, **layout**.

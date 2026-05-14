@@ -59,3 +59,15 @@ export function TopNavSimple({ brand, links, cta, className }: TopNavSimpleProps
     </nav>
   );
 }
+
+export const demos: Record<string, TopNavSimpleProps> = {
+  default: {
+    brand: "Acme",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "Pricing", href: "#pricing", active: true },
+      { label: "Docs", href: "#docs" },
+    ],
+    cta: { label: "Get started", href: "#cta" },
+  },
+};

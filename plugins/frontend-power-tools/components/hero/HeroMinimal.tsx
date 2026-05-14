@@ -36,3 +36,10 @@ export function HeroMinimal({ title, cta, className }: HeroMinimalProps) {
     </section>
   );
 }
+
+export const demos: Record<string, HeroMinimalProps> = {
+  default: {
+    title: "Ship faster.",
+    cta: { label: "Start free", href: "#start" },
+  },
+};

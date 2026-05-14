@@ -61,3 +61,13 @@ export function HeroSimple({
     </section>
   );
 }
+
+export const demos: Record<string, HeroSimpleProps> = {
+  default: {
+    title: "Build faster with frontend-power-tools",
+    subtitle:
+      "A complete design system in one Claude Code plugin — themes, components, audit loop, all included.",
+    ctaPrimary: { label: "Get started", href: "#install" },
+    ctaSecondary: { label: "View on GitHub", href: "#repo" },
+  },
+};

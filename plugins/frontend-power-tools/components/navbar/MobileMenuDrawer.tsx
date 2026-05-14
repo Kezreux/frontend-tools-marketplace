@@ -157,3 +157,23 @@ export function MobileMenuDrawer({
     </>
   );
 }
+
+export const demos: Record<string, MobileMenuDrawerProps> = {
+  default: {
+    brand: "Acme",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "Pricing", href: "#pricing", active: true },
+      { label: "Docs", href: "#docs" },
+      { label: "Blog", href: "#blog" },
+    ],
+    footerSlot: (
+      <a
+        href="#cta"
+        className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        Get started
+      </a>
+    ),
+  },
+};

@@ -82,3 +82,17 @@ export function HeroWithStats({
     </section>
   );
 }
+
+export const demos: Record<string, HeroWithStatsProps> = {
+  default: {
+    title: "Built by makers, for makers",
+    subtitle: "Real numbers from production projects using frontend-power-tools.",
+    ctaPrimary: { label: "See the docs", href: "#docs" },
+    stats: [
+      { value: "10k+", label: "Components installed" },
+      { value: "7", label: "Preset themes" },
+      { value: "100%", label: "WCAG AA pass" },
+      { value: "<1s", label: "Time to first paint" },
+    ],
+  },
+};

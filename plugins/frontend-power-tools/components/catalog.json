@@ -1,0 +1,227 @@
+{
+  "version": "1",
+  "generatedAt": "2026-05-14T16:27:17.000Z",
+  "categories": [
+    {
+      "id": "hero",
+      "label": "Hero sections",
+      "count": 5
+    },
+    {
+      "id": "navbar",
+      "label": "Navigation",
+      "count": 5
+    }
+  ],
+  "components": [
+    {
+      "name": "HeroMinimal",
+      "category": "hero",
+      "description": "Maximalist whitespace, single headline, single CTA. Linear / Vercel feel.",
+      "keywords": [
+        "hero",
+        "minimal",
+        "clean",
+        "simple",
+        "whitespace",
+        "single"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/frontend-power-tools/components/hero/HeroMinimal.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/hero/HeroMinimal.tsx",
+      "lines": 46,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroSimple",
+      "category": "hero",
+      "description": "Centered hero with title, subtitle, primary CTA, and optional secondary CTA. The marketing default.",
+      "keywords": [
+        "hero",
+        "landing",
+        "marketing",
+        "cta",
+        "centered",
+        "headline"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/frontend-power-tools/components/hero/HeroSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/hero/HeroSimple.tsx",
+      "lines": 74,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroSplit",
+      "category": "hero",
+      "description": "Two-column hero — text + CTA on the left, visual slot (image, illustration, screenshot) on the right. SaaS classic.",
+      "keywords": [
+        "hero",
+        "split",
+        "two-column",
+        "saas",
+        "image",
+        "illustration",
+        "visual"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/hero/HeroSplit.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/hero/HeroSplit.tsx",
+      "lines": 97,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroWithForm",
+      "category": "hero",
+      "description": "Centered hero with title, subtitle, and an inline email signup form. Newsletter / waitlist style with success state.",
+      "keywords": [
+        "hero",
+        "form",
+        "signup",
+        "email",
+        "waitlist",
+        "newsletter",
+        "subscribe"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/hero/HeroWithForm.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/hero/HeroWithForm.tsx",
+      "lines": 130,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "HeroWithStats",
+      "category": "hero",
+      "description": "Centered hero with headline, CTA, and a row of 3–4 social-proof stat blocks below. Conversion-focused.",
+      "keywords": [
+        "hero",
+        "stats",
+        "metrics",
+        "social proof",
+        "conversion",
+        "numbers",
+        "marketing"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/hero/HeroWithStats.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/hero/HeroWithStats.tsx",
+      "lines": 99,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "MobileMenuDrawer",
+      "category": "navbar",
+      "description": "Mobile-first hamburger menu that slides in a full-height drawer. Focus trap, ESC closes, tap outside closes.",
+      "keywords": [
+        "mobile",
+        "drawer",
+        "hamburger",
+        "menu",
+        "off-canvas",
+        "responsive",
+        "mobile-nav"
+      ],
+      "complexity": "complex",
+      "filePath": "plugins/frontend-power-tools/components/navbar/MobileMenuDrawer.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/navbar/MobileMenuDrawer.tsx",
+      "lines": 180,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "SidebarVertical",
+      "category": "navbar",
+      "description": "Full-height left sidebar with sections, icons, and optional bottom user block. App / dashboard layout.",
+      "keywords": [
+        "sidebar",
+        "vertical",
+        "navigation",
+        "dashboard",
+        "app",
+        "sections",
+        "side menu"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/navbar/SidebarVertical.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/navbar/SidebarVertical.tsx",
+      "lines": 127,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "TopNavSimple",
+      "category": "navbar",
+      "description": "Clean horizontal top nav with logo and links. Optional CTA button on the right.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "header",
+        "navigation",
+        "marketing",
+        "landing"
+      ],
+      "complexity": "simple",
+      "filePath": "plugins/frontend-power-tools/components/navbar/TopNavSimple.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/navbar/TopNavSimple.tsx",
+      "lines": 74,
+      "demos": [
+        "default"
+      ]
+    },
+    {
+      "name": "TopNavWithAuth",
+      "category": "navbar",
+      "description": "Top nav with logo, links, and right-aligned auth state. Shows avatar dropdown when authenticated, sign-in CTAs otherwise.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "header",
+        "auth",
+        "login",
+        "user",
+        "avatar",
+        "dropdown"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/navbar/TopNavWithAuth.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/navbar/TopNavWithAuth.tsx",
+      "lines": 180,
+      "demos": [
+        "signed in",
+        "signed out"
+      ]
+    },
+    {
+      "name": "TopNavWithSearch",
+      "category": "navbar",
+      "description": "Top nav with logo, center search input, and action icons on the right. App / dashboard feel.",
+      "keywords": [
+        "navbar",
+        "top nav",
+        "search",
+        "command palette",
+        "header",
+        "dashboard",
+        "app"
+      ],
+      "complexity": "medium",
+      "filePath": "plugins/frontend-power-tools/components/navbar/TopNavWithSearch.tsx",
+      "sourceUrl": "https://raw.githubusercontent.com/Kezreux/frontend-tools-marketplace/main/plugins/frontend-power-tools/components/navbar/TopNavWithSearch.tsx",
+      "lines": 138,
+      "demos": [
+        "default"
+      ]
+    }
+  ]
+}

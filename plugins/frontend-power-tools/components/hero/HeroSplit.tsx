@@ -81,3 +81,16 @@ export function HeroSplit({
     </section>
   );
 }
+
+export const demos: Record<string, HeroSplitProps> = {
+  default: {
+    title: "Your design system, on autopilot",
+    subtitle:
+      "Pick a theme. Pick a component. Ship the page. Reviews, audits, and fixes happen automatically.",
+    ctaPrimary: { label: "Try the plugin", href: "#install" },
+    ctaSecondary: { label: "View source", href: "#repo" },
+    visual: (
+      <div className="aspect-video w-full bg-gradient-to-br from-primary/20 to-accent/20" />
+    ),
+  },
+};

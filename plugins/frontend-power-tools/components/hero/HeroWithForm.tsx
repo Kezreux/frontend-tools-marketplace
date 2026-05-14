@@ -117,3 +117,13 @@ export function HeroWithForm({
     </section>
   );
 }
+
+export const demos: Record<string, HeroWithFormProps> = {
+  default: {
+    title: "Join the waitlist",
+    subtitle: "Be the first to know when frontend-power-tools v1.0 ships.",
+    placeholder: "you@company.com",
+    ctaLabel: "Subscribe",
+    onSubmit: async () => {},
+  },
+};

@@ -1,0 +1,8 @@
+{
+  "name": "frontend-tools-marketplace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:catalog": "node plugins/frontend-power-tools/scripts/build-catalog.mjs"
+  }
+}

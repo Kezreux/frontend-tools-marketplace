@@ -91,3 +91,36 @@ export function SidebarVertical({
     </nav>
   );
 }
+
+export const demos: Record<string, SidebarVerticalProps> = {
+  default: {
+    brand: "Acme",
+    sections: [
+      {
+        label: "Main",
+        items: [
+          { label: "Dashboard", href: "#dashboard", active: true },
+          { label: "Projects", href: "#projects", badge: 3 },
+          { label: "Reports", href: "#reports" },
+        ],
+      },
+      {
+        label: "Settings",
+        items: [
+          { label: "Profile", href: "#profile" },
+          { label: "Billing", href: "#billing" },
+          { label: "Team", href: "#team", badge: "Pro" },
+        ],
+      },
+    ],
+    bottomSlot: (
+      <div className="flex items-center gap-3">
+        <div className="h-8 w-8 rounded-full bg-muted" aria-hidden="true" />
+        <div className="flex-1 text-sm">
+          <p className="font-medium text-foreground">Nicholas</p>
+          <p className="text-xs text-muted-foreground">Free plan</p>
+        </div>
+      </div>
+    ),
+  },
+};

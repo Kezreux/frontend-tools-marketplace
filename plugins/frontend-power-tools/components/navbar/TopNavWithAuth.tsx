@@ -153,3 +153,27 @@ export function TopNavWithAuth({
     </nav>
   );
 }
+
+export const demos: Record<string, TopNavWithAuthProps> = {
+  "signed in": {
+    brand: "Acme",
+    links: [
+      { label: "Dashboard", href: "#dashboard" },
+      { label: "Projects", href: "#projects", active: true },
+      { label: "Team", href: "#team" },
+    ],
+    user: { name: "Nicholas", email: "nicholas@example.com" },
+    onSignOut: () => {},
+  },
+  "signed out": {
+    brand: "Acme",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "Docs", href: "#docs" },
+    ],
+    user: null,
+    onSignIn: () => {},
+    onSignUp: () => {},
+  },
+};
